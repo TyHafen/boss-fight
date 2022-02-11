@@ -76,10 +76,11 @@ function reset() {
 }
 
 function purchase() {
-    if (ringOfPower = 4) {
+    if (ringOfPower >= 4) {
         characters.gandalf.health += 25
         ringOfPower -= 4
     }
+    draw()
 }
 
 function ring() {
@@ -87,6 +88,12 @@ function ring() {
     document.getElementById('rings').innerText = ringOfPower
 }
 
+function gameReset() {
+    characters.gandalf.health = 100
+    characters.sauron.health = 100
+    ringOfPower = 0
+    draw()
+}
 
 draw()
 
